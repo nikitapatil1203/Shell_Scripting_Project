@@ -1,6 +1,8 @@
 !#/bin/bash
 
 token="$2"
+
+# Authentication
 curl --request GET \
 --url "https://api.github.com/octocat" \
 --header "Authorization: Bearer $token" \
@@ -8,6 +10,7 @@ curl --request GET \
 
 org="$1"
 
+# Hit the API and get the Repository Name
 python3 << END
 
 import requests
