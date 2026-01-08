@@ -14,17 +14,18 @@ org="$1"
 python3 << END
 
 import requests
-from box import Box
+
 
 OrganizationName="$org"
 
 url = f"https://api.github.com/orgs/{OrganizationName}/repos"
 
-response = requests.get(url)
-print(response.status_code)
-data = response.json()
-js =  Box(data[0])
-print("Repo_Name = "+js.name)
+response =  requests.get(url)
+repoDetails = response.json()
+print(response.json())
+
+for repo in repoDetails:
+        print(repo["name"])
 
 END
 
