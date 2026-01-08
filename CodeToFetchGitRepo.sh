@@ -15,7 +15,6 @@ python3 << END
 
 import requests
 
-
 OrganizationName="$org"
 
 url = f"https://api.github.com/orgs/{OrganizationName}/repos"
