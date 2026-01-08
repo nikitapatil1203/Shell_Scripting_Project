@@ -1,20 +1,18 @@
 !#/bin/bash
 
+org="$1"
 token="$2"
 
-# Authentication
+# ===== Authentication=====
 curl --request GET \
 --url "https://api.github.com/octocat" \
 --header "Authorization: Bearer $token" \
 --header "X-GitHub-Api-Version: 2022-11-28"
 
-org="$1"
-
-# Hit the API and get the Repository Name
+#==== Hit the API and get the Repository Name===
 python3 << END
 
 import requests
-
 OrganizationName="$org"
 
 url = f"https://api.github.com/orgs/{OrganizationName}/repos"
