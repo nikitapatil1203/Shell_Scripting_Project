@@ -3,7 +3,7 @@
 org="$1"
 token="$2"
 
-# ===== Authentication=====
+#===== Authentication=====
 curl --request GET \
 --url "https://api.github.com/octocat" \
 --header "Authorization: Bearer $token" \
